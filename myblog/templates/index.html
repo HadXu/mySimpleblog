@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="posts">
+        {% for post in post_list %}
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="{% url "detail" post.id %}" target="_parent">{{ post.title }}</a></h2>
+
+                    <p class="post-meta">
+                        日期: <label class="post-author" href="#">{{ post.date_time }}</label>
+                    </p>
+                </header>
+            </section>
+        {% endfor %}
+    </div>
+{% endblock %}

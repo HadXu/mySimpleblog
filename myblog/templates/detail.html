@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{#{% load custom_markdown %}#}
+
+{% block content %}
+    <div class="posts">
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title"><a href="">{{ post.title }}</a></h2>
+
+                <p class="post-meta">
+                    日期: <label class="post-author">{{ post.date_time |date:"Y /m /d H:i:s" }}</label>
+                </p>
+            </header>
+
+            <div>
+                {{ post.content|safe }}
+            </div>
+        </section>
+    </div>
+{% endblock %}
